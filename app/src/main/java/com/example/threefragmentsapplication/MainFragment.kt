@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager.BackStackEntry
+import com.example.threefragmentsapplication.fragmentNumbers.FirstFragment
+import com.example.threefragmentsapplication.fragmentNumbers.SecondFragment
+import com.example.threefragmentsapplication.fragmentNumbers.ThirdFragment
 
 class MainFragment : Fragment() {
 
@@ -35,7 +37,7 @@ class MainFragment : Fragment() {
         fun addFragment(fragment: Fragment) {
             childFragmentManager.beginTransaction()
                 .replace(R.id.fragmentMain, fragment)
-                .addToBackStack(null)
+                .addToBackStack(fragment.id.toString())
                 .commit()
         }
 
